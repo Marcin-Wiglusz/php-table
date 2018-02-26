@@ -1,5 +1,9 @@
 <?php
 
+// Create connection
+$conn = new mysqli("localhost", "xx", "xx", "work_schedule")
+or die("Connection failed");
+
 require 'libs/Smarty.class.php';
 
 $smarty = new Smarty;
@@ -8,19 +12,26 @@ $smarty->debugging = true;
 $smarty->caching = true;
 $smarty->cache_lifetime = 120;
 
-$example = array(
-  'item_A' => 123,
-  'item_B' => 234,
-  'item_C' => 345,
-  'item_D' => 456,
-  'item_E' => 567
-);
+$sql = "SELECT * FROM users";
+mysqli_query($conn, $sql) or die('Error querying database.');
+$result = mysqli_query($conn, $sql);
 
+if ($result->num_rows > 0) {
+  // output data of each row
+  //$usersRow is my users table
+  while($usersRow = mysqli_fetch_assoc($result)) {
+    //creating associative array (key => val)
+    $usersRows[] = array(
+      "name" => $usersRow["user_name"],
+      "id" => $usersRow["user_id"]
+    );
+  }
+}
+else {
+  echo "0 results";
+}
 
-//making array available in tpl file (name-used in tpl,arr)
-$smarty->assign('letters', $example);
-$smarty->assign('name', 'What title contains');
-
-
-//render page
+$smarty->assign("usersRow", $usersRows);
 $smarty->display('index.tpl');
+$conn->close();
+?>

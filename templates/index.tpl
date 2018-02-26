@@ -1,8 +1,13 @@
-<!-- {config_load file="test.conf" section="setup"} -->
 <style type="text/css">
+
 {literal}
+body {
+  margin: 0;
+}
+
 table {
   border-collapse: collapse;
+  margin: 40px;
 }
 
 td {
@@ -12,14 +17,11 @@ td {
 {/literal}
 </style>
 
-Testing Smarty index.tpl <br />
-<br />
-
 <table>
-  {foreach from = $letters key = k item = p}
+  {foreach $usersRow as $usersItem}
     <tr>
-      <td>{$k}</td>
-      <td>{$p}</td>
+      <td>{$usersItem["id"]}</td>
+      <td>{$usersItem["name"]}</td>
     </tr>
   {/foreach}
 </table>
