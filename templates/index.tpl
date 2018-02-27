@@ -2,25 +2,7 @@
 <head>
   <meta charset="utf-8">
   <title>PHP Table</title>
-  <style>
-  /*{literal}*/
-  body {
-    margin: 0;
-  }
-
-  table {
-    border-collapse: collapse;
-    margin: 40px;
-  }
-
-  td {
-    border: 1px solid #000;
-    padding: 5px;
-  }
-
-
-  /*{/literal}*/
-  </style>
+  <link rel="stylesheet" type="text/css" href="./styles/styles.css">
 </head>
 
 <body>
@@ -34,13 +16,16 @@
       <td></td>
       <td></td>
       {for $firstDay = 1 to $days}
-        <td>{$firstDay}</td>
+        <td class = "num-cell">{$firstDay}</td>
       {/for}
     </tr>
     {foreach $usersRow as $usersItem}
       <tr>
-        <td>{$usersItem["id"]}</td>
-        <td>{$usersItem["name"]}</td>
+        <td class = "num-cell">{$usersItem["id"]}</td>
+        <td class = "name-cell">{$usersItem["name"]}</td>
+        {for $firstDay = 1 to $days}
+          <td class = "num-cell"></td>
+        {/for}
       </tr>
     {/foreach}
   </table>
