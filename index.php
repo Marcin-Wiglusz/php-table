@@ -9,8 +9,15 @@ require 'libs/Smarty.class.php';
 $smarty = new Smarty;
 
 $smarty->debugging = true;
-$smarty->caching = true;
-$smarty->cache_lifetime = 120;
+$smarty->caching = 1;
+$smarty->cache_lifetime = 1;
+$smarty->compile_check = true;
+
+//get number of days for selected month$year in tpl form
+$numOfDays = cal_days_in_month(CAL_GREGORIAN, $_GET["StartDateMonth"], $_GET["StartDateYear"]);
+
+//testing
+echo "Selected month has $numOfDays days";
 
 $sql = "SELECT * FROM users";
 mysqli_query($conn, $sql) or die('Error querying database.');
@@ -31,6 +38,11 @@ else {
   echo "0 results";
 }
 
+$smarty->assign("days", $numOfDays);
+$smarty->assign("year", $year);
+
+
+$smarty->assign("months", $months);
 $smarty->assign("usersRow", $usersRows);
 $smarty->display('index.tpl');
 $conn->close();
