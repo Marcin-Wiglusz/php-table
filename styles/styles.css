@@ -2,10 +2,18 @@ body {
   margin: 0;
 }
 
+.container {
+  padding: 40px;
+}
+
 table {
   border-collapse: collapse;
-  margin: 40px;
+  margin-top: 10px;
 }
+
+/*.first-tr {
+  color: green;
+}*/
 
 td {
   border: 1px solid #000;
@@ -14,7 +22,6 @@ td {
 
 .num-cell {
   text-align: center;
-  /*vertical-align: middle;*/
   min-width: 31;
 }
 

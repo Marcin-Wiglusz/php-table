@@ -6,29 +6,35 @@
 </head>
 
 <body>
-  <form name = "calendar" action = "index.php" method = "GET">
-    {html_select_date prefix = 'StartDate' start_year = '-10' end_year = '+10' display_days = false}
-    <button type = "submit">Select</button>
-  </form>
+  <div class = "container">
+    <p>
+      Select any date to display work schedule:
+    </p>
+    <form name = "calendar" action = "index.php" method = "GET">
+      {html_select_date prefix = 'StartDate' start_year = '-10' end_year = '+10' display_days = false}
+      <button type = "submit" id = "confirm">Select</button>
+    </form>
 
-  <table>
-    <tr>
-      <td></td>
-      <td></td>
-      {for $firstDay = 1 to $days}
-        <td class = "num-cell">{$firstDay}</td>
-      {/for}
-    </tr>
-    {foreach $usersRow as $usersItem}
-      <tr>
-        <td class = "num-cell">{$usersItem["id"]}</td>
-        <td class = "name-cell">{$usersItem["name"]}</td>
+    <table>
+      <tr class = "first-tr">
+        <td></td>
+        <td></td>
         {for $firstDay = 1 to $days}
-          <td class = "num-cell"></td>
+          <td class = "num-cell">{$firstDay}</td>
         {/for}
       </tr>
-    {/foreach}
-  </table>
+      {foreach $users as $usersItem}
+        <tr>
+          <td class = "num-cell">{$usersItem["id"]}</td>
+          <td class = "name-cell">{$usersItem["name"]}</td>
+          {for $firstDay = 1 to $days}
+            <td class = "num-cell symbols">
+            </td>
+          {/for}
+        </tr>
+      {/foreach}
+    </table>
+  </div>
 
 </body>
 </html>
