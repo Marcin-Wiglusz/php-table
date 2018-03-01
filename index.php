@@ -23,8 +23,9 @@ $month = $_GET['StartDateMonth'];
 $time = $year.'-'.$month.'-01';
 $smarty->assign('time', $time);
 
-//get number of days for selected months&year in tpl form
+//get number of days for selected m & Y in tpl form
 $numOfDays = cal_days_in_month(CAL_GREGORIAN, $month, $year);
+$smarty->assign("days", $numOfDays);
 
 $users = [];
 $symbols = [];
@@ -55,7 +56,6 @@ $symbols = [];
 
 $smarty->assign("users", $users);
 $smarty->assign("symbols", $symbols);
-$smarty->assign("days", $numOfDays);
 $smarty->display('index.tpl');
 $conn->close();
 ?>

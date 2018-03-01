@@ -19,6 +19,7 @@ function cell(userId, day, symbolId, symbolName, symbolDescription) {
   else {
     cellSymbolName
     .html("")
+    
     cell
     .attr('title', "")
     .attr('data-symbolid', "");
@@ -36,10 +37,12 @@ function showSelect(userId, day, offset) {
   // console.log(value);
   var div = $('#select-symbol');
   var select = $('#select-symbol select');
+
   select
   .attr('data-userid', userId)
   .attr('data-day', day)
   .val(value);
+
   div
   .offset(offset)
   .show();

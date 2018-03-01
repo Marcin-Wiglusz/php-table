@@ -7,7 +7,7 @@
 </head>
 <body>
   <?php
-  echo "Testing after exit";
+  echo "Test";
   ?>
 </body>
 </html>
