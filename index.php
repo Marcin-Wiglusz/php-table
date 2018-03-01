@@ -19,6 +19,10 @@ $smarty->compile_check = true;
 $year = $_GET['StartDateYear'];
 $month = $_GET['StartDateMonth'];
 
+// pass selected m & Y to html_select_date time attribute
+$time = $year.'-'.$month.'-01';
+$smarty->assign('time', $time);
+
 //get number of days for selected months&year in tpl form
 $numOfDays = cal_days_in_month(CAL_GREGORIAN, $month, $year);
 

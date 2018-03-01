@@ -11,7 +11,7 @@
       Select any date to display work schedule:
     </p>
     <form name = "calendar" action = "index.php" method = "GET">
-      {html_select_date prefix = 'StartDate' start_year = '-10' end_year = '+10' display_days = false}
+      {html_select_date prefix = 'StartDate' time=$time start_year = '-10' end_year = '+10' display_days = false}
       <button type = "submit" id = "confirm">Select</button>
     </form>
 
