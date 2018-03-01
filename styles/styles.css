@@ -17,10 +17,7 @@ td {
   padding: 5px 0;
 }
 
-/*.select {
-  display: none;
-}*/
-.num-cell {select-symbol
+.num-cell {
   text-align: center;
   min-width: 31;
 }
