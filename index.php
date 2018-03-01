@@ -3,7 +3,6 @@
 // val for connection
 include 'dbaccess.php';
 
-
 // Create connection
 $conn = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_SCHEME)
 or die("Connection failed");
@@ -25,7 +24,6 @@ $numOfDays = cal_days_in_month(CAL_GREGORIAN, $month, $year);
 
 $users = [];
 $symbols = [];
-
 
   $sql = "SELECT id, name FROM user";
   mysqli_query($conn, $sql) or die('Error querying database.');
@@ -50,7 +48,6 @@ $symbols = [];
       $symbols[$row['id']] = $row;
     }
   }
-
 
 $smarty->assign("users", $users);
 $smarty->assign("symbols", $symbols);

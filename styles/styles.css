@@ -26,14 +26,13 @@ td {
 }
 
 .name-cell {
-  text-align: left;
+  /*text-align: left;*/
   padding: 5px 10px;
 }
 
 #select-symbol {
-  border: 1px red solid;
   position: absolute;
   top: 0;
   left: 0;
-  /*display: none;*/
+  display: none;
 }

@@ -26,6 +26,10 @@ function cell(userId, day, symbolId, symbolName, symbolDescription) {
   }
 }
 
+function hideSelect() {
+  var div = $('#select-symbol').hide().css("top",0).css("left",0);
+}
+
 function showSelect(userId, day, offset) {
   var cell = $('#' + userId + '_' + day);
   var value = cell.attr('data-symbolid');

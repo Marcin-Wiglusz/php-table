@@ -53,7 +53,7 @@
       $(this).attr('data-day'),
       $('#symbol-value-' + $(this).val()).attr('data-id'),
       $('#symbol-value-' + $(this).val()).attr('data-name'),
-      $('#symbol-value-' + $(this).val()).attr('data-description'));"
+      $('#symbol-value-' + $(this).val()).attr('data-description')); hideSelect();"
     data-userid = ""
     data-day = "">
       <option id = "symbol-value-0" value = "0"></option>
