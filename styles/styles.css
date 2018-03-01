@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  position: relative;
 }
 
 .container {
@@ -11,16 +12,15 @@ table {
   margin-top: 10px;
 }
 
-/*.first-tr {
-  color: green;
-}*/
-
 td {
   border: 1px solid #000;
   padding: 5px 0;
 }
 
-.num-cell {
+/*.select {
+  display: none;
+}*/
+.num-cell {select-symbol
   text-align: center;
   min-width: 31;
 }
@@ -28,4 +28,12 @@ td {
 .name-cell {
   text-align: left;
   padding: 5px 10px;
+}
+
+#select-symbol {
+  border: 1px red solid;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /*display: none;*/
 }
