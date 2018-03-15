@@ -5,6 +5,7 @@ body {
 
 .container {
   padding: 40px;
+  margin: auto;
 }
 
 table {

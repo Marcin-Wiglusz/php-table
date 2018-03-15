@@ -14,15 +14,16 @@ function cell(userId, day, symbolId, symbolName, symbolDescription) {
   cell
   .attr('title', symbolDescription)
   .attr('data-symbolid', symbolId);
-  //console.log(cell);
+  // console.log(symbolId);
   }
   else {
     cellSymbolName
     .html("")
-    
+
     cell
     .attr('title', "")
     .attr('data-symbolid', "");
+    // console.log(symbolId);
 
   }
 }
@@ -42,8 +43,10 @@ function showSelect(userId, day, offset) {
   .attr('data-userid', userId)
   .attr('data-day', day)
   .val(value);
+  // console.log(select);
 
   div
   .offset(offset)
   .show();
+
 }

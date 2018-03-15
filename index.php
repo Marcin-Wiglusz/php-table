@@ -2,7 +2,7 @@
 
 // val for connection
 include 'dbaccess.php';
-
+include 'debug.php';
 // Create connection
 $conn = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_SCHEME)
 or die("Connection failed");
@@ -42,7 +42,6 @@ $symbols = [];
       $users[$row['id']] = $row;
     }
   }
-
 
   $sql = "SELECT id, name, description FROM symbol";
   mysqli_query($conn, $sql) or die('Error querying database.');
